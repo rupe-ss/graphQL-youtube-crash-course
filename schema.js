@@ -17,3 +17,20 @@ const BookType = new GraphQLObjectType({
     genre: { type: GraphQLString },
   }),
 });
+
+const RootQuery = new GraphQLObjectType({
+  name: "RootQueryType",
+  fields: () => ({
+    book: {
+      type: BookType,
+      args: { id: { type: GraphQLString } },
+      resolve(parent, args) {
+        //Code inside here will go and grab from database.
+      },
+    },
+  }),
+});
+
+module.exports = new schema.GraphQLSchema({
+  query: RootQuery,
+});
