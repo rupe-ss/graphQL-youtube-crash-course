@@ -1,6 +1,8 @@
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 
+import schema from "./schema";
+
 const app = express();
 
 app.listen(4000, () => {
@@ -11,6 +13,6 @@ app.listen(4000, () => {
 app.use(
   "/graphql",
   graphqlHTTP({
-    //scheme will go inside here
+    schema,
   })
 );
