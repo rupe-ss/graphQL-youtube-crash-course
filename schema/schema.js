@@ -4,6 +4,8 @@ Schema has three things.
 2. Relation between the types
 3. Root Queries
 */
+const Book = require('../models/book');
+const Author = require('../models/Author');
 
 const graphql = require('graphql');
 
