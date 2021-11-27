@@ -4,6 +4,7 @@ const { graphqlHTTP } = require('express-graphql');
 
 const app = express();
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 app.listen(4000, () => {
   console.log('Now listening to port 4000.');
@@ -16,6 +17,7 @@ mongoose.connection.once('open', () => {
   console.log('conneted to database');
 });
 
+app.use(cors());
 //Binding express with GraphQL
 app.use(
   '/graphql',
