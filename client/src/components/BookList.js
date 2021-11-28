@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo';
 import { getBooksQuery } from '../queries/queries';
 
 const BookList = ({ data }) => {
-  const display = () => {
+  const displayBooks = () => {
     if (data.loading) {
       return <div>Loading books...</div>;
     } else {
@@ -15,7 +15,7 @@ const BookList = ({ data }) => {
 
   return (
     <div>
-      <ul id='book-list'>{display()}</ul>
+      <ul id='book-list'>{displayBooks()}</ul>
     </div>
   );
 };
